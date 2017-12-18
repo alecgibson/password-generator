@@ -31,7 +31,7 @@ module PasswordGenerator
         LOWER_CASE,
         NUMBERS,
         symbols,
-      ]
+      ].reject(&:empty?)
     end
 
     def characters

@@ -14,6 +14,10 @@ OptionParser.new do |opts|
   opts.on("-s", "--symbols S", String, "Allowed symbols (default: #{PasswordGenerator::Password.new.symbols})") do |symbols|
     options[:symbols] = symbols
   end
+
+  opts.on("-n", "--nosymbols", "Do not include any symbols") do |no_symbols|
+    options[:symbols] = ""
+  end
 end.parse!
 
 PasswordGenerator::Generator.run(options)
